@@ -10,8 +10,8 @@ printf("Enter a number: "); scanf("%d", &N);
 printf("Factors of %d are: ", N);
  for(i=1;i<= N; ++i) 
  {
-if (N%1==0) {printf("%d ", i);
+if (N%i==0) {printf("%d ", i);
 }
 }
 printf("\n");
-return 0;
+returnÂ 0;
