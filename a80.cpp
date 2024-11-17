@@ -15,7 +15,7 @@ void fibonacci(int n) {
 int main() {
 	int n;
 	scanf("%d",&n);
-    fibonacci(5);
+    fibonacci(n);
     
     return 0;
 }
