@@ -1,22 +1,28 @@
 #include<stdio.h>
-void palindrome(int n){
-int	orgnumber=n;
-	int remainder=0,reversednum=0;
-	while(n!=0){   
-	remainder=n%10;
-	reversednum=reversednum*10+remainder;
-	n/=10;}
-	if(orgnumber==reversednum){
-	printf("%d is a palindrome number", orgnumber);
-}
-else{printf("%d is not a palindrome number", orgnumber);
-}
+#include<math.h>
+int armstrong(int num){
+	int orgnum,rem,result=0,n=0;
+	orgnum=num;
+	while(orgnum!=0)
+		{
+			orgnum/=10;
+			n++;
+		}
+	orgnum=num;
+	while(orgnum!=0)
+		{
+			rem=orgnum%10;
+			result+=pow(rem,n);
+			orgnum/=10;
+		}
+	return(result==num);
 }
 int main(){
-	int n,orgnumber,x;
+	int num;
 	printf("enter number");
-	scanf("%d",&orgnumber);
-	x=orgnumber;
-palindrome(x);	
-return 0;
-}
+	scanf("%d",&num);
+	if(armstrong(num))
+		printf("%d is an armstrong num\n", num);
+	else
+		printf("%d is not an armstrong num\n", num);
+	}
