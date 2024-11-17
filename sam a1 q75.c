@@ -1,46 +1,35 @@
 #include<stdio.h>
-int main() {
-
-    int score[5][5], i, j, k=0, max=0;
-    printf("Enter your 3 subject marks  : \n");
-int totalmarks[i][2];
-//read the data...
-    for(i=0; i<5; i++) {
-        
-        totalmarks[i][2]=0;
-        for(j=0; j<3; j++) {
-            scanf("%d", &score[i][j]);
-            totalmarks[i][2]+=score[i][j];
-        }
-    }
-
-//total marks...
-    printf("Total marks of each students......\n");
-    for(i=0; i<5; i++) {
-        printf("%d. %d\n", i+1, totalmarks[i][2]);
-    }
-
-//Highest marks...
-    for(j=1; j<3; j++) {
-        max=0;
-        for(i=0; i<5; i++) {
-            if(max<score[i][j]) {
-                max=score[i][j];
-                k=i;
-            }
-        }
-        printf("Highest marks in subject%d : %d.%d\n", j, k+1, max);
-    }
-
-//highest total marks...
-    max=0;
-    for(i=0; i<5; i++) {
-        if(max<totalmarks[i][2]) {
-            max=totalmarks[i][4];
-            k=i;
-        }
-    }
-    printf("\nHighest total marks is : %d.%d", k+1, max);
-
-    return 0;
+int main(){int sum,count=0,max=-9999;
+	int a[4][3];
+	//reading data
+	for(int i=0;i<4;i++){
+		for(int j=0;j<3;j++){
+			scanf("%d",&a[i][j]);
+		}
+	}
+	
+	//total marks and highest total
+	for(int i=0;i<4;i++){
+		sum=0;
+		for(int j=0;j<3;j++){
+			sum+=a[i][j];
+			}
+		if(sum>max){
+		max=sum;
+		count=i+1;}
+		
+		printf("%d marks is %d\n",i+1,sum);	
+	}
+	printf("highest marks is %d and obtained by %d\n",max,count);	
+	
+	//highest marks subject wise
+	for(int i=0;i<3;i++){
+		int max=-9999;
+		for(int j=0;j<4;j++){
+		if(a[j][i]>max){
+		max=a[j][i];
+		count=j;}
+		}
+		printf("highest marks in subject%d is %d and obtained by %d\n",i+1,max,count+1);
+		}
 }
